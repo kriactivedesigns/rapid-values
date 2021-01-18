@@ -15,13 +15,15 @@ export const getUsers = () => {
 export const getUserDetail = (id) => {
     return function (dispatch){
         var users = store.getState().users
-        var selectedUser
-         users.some(user => {
-            if(user.id == id){
-                selectedUser = user
-                return
-            }
-        })
+        var selectedUser = undefined
+        if(users){
+            users.some(user => {
+                if(user.id == id){
+                    selectedUser = user
+                    return
+                }
+            })
+        }
         dispatch(getUserDetailSuccess(selectedUser))
     }
 }

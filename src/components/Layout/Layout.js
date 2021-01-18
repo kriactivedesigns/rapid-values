@@ -13,7 +13,7 @@ import { useDispatch } from 'react-redux'
 
 const useStyles = makeStyles( theme => ({
     root: {
-        height: '100%'
+        height: '80%'
     },
 }))
 
@@ -27,20 +27,13 @@ function Layout() {
     }, [])
 
     return (
-        // Container -> Header -> UserList
         <Container className={classes.root}>
-            <Grid container style={{ height: '100%' }} alignContent="center">
-                <Grid item xs={12} style={{ marginBottom: 25 }}>
-                    <Typography style={{ fontSize: 40, marginBottom: 0 }}>USERS</Typography>
-                    <Typography>Select the user to view the details</Typography> 
-                </Grid>
-                <Router>
-                    <Switch>
-                        <Route exact path="/" component={(props) => <Users/> }/>
-                        <Route exact path="/userdetails/:id" component={UserDetail}/>
-                    </Switch>
-                </Router>
-            </Grid>
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={(props) => <Users/> }/>
+                    <Route exact path="/userdetails/:id" component={UserDetail}/>
+                </Switch>
+            </Router>
         </Container>
     )
 }
