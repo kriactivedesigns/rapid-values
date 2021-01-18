@@ -7,7 +7,7 @@ import {
     Typography 
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import { getUsers } from '../../redux/userActions'
 import { useDispatch } from 'react-redux'
 
@@ -28,10 +28,10 @@ function Layout() {
 
     return (
         <Container className={classes.root}>
-            <Router>
+            <Router basename="/">
                 <Switch>
-                    <Route exact path="/" component={(props) => <Users/> }/>
-                    <Route exact path="/userdetails/:id" component={UserDetail}/>
+                    <Route exact path={`/`} component={(props) => <Users/> }/>
+                    <Route exact path={`/userinfo/:id`} component={UserDetail}/>
                 </Switch>
             </Router>
         </Container>

@@ -45,7 +45,7 @@ function User (props) {
                         <Typography style={{ fontSize: 14, marginTop: '-5px', color: 'grey' }}>{user.company.name}</Typography>
                     </Grid>
                     <Grid item xs="auto">
-                        <Link to={`/userdetails/${user.id}`}>
+                        <Link to={`/userinfo/${user.id}`}>
                             <ArrowForwardIosIcon className={classes.arrow}/>
                         </Link>
                     </Grid>
